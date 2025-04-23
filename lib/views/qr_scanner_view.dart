@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:qr_code_scanner_plus/qr_code_scanner_plus.dart';
 import '../controllers/qr_controller.dart';
 import '../routes/app_routes.dart';
 
@@ -20,7 +20,7 @@ class _QrScannerViewState extends State<QrScannerView> {
   bool cameraPermissionGranted = false;
   bool processingCode = false;
   final QrController qrController = Get.find<QrController>();
-  
+
   @override
   void initState() {
     super.initState();
@@ -130,13 +130,13 @@ class _QrScannerViewState extends State<QrScannerView> {
         ),
       );
     }
-    
+
     // For best appearance, match this width with the size of the camera preview
     var scanArea = (MediaQuery.of(context).size.width < 400 ||
             MediaQuery.of(context).size.height < 400)
         ? 200.0
         : 300.0;
-    
+
     return QRView(
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
@@ -160,22 +160,22 @@ class _QrScannerViewState extends State<QrScannerView> {
       setState(() {
         processingCode = true;
       });
-      
+
       result = scanData;
-      
+
       if (result?.code != null) {
         // Pause camera while processing
         controller.pauseCamera();
-        
+
         // Process the QR code data
         await qrController.processScannedQrCode(result!.code!);
-        
+
         // Resume camera if there was an error (to try again)
         if (!qrController.scanSuccess.value) {
           controller.resumeCamera();
         }
       }
-      
+
       setState(() {
         processingCode = false;
       });
@@ -224,10 +224,4 @@ class _QrScannerViewState extends State<QrScannerView> {
       ],
     );
   }
-
-  @override
-  void dispose() {
-    controller?.dispose();
-    super.dispose();
-  }
-} 
+}

@@ -1,10 +1,10 @@
 name: mobile_attendance
 description: A Flutter attendance application with QR code functionality
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.4.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -12,20 +12,26 @@ dependencies:
   cupertino_icons: ^1.0.5
   get: ^4.6.5
   qr_flutter: ^4.1.0
-  qr_code_scanner: ^1.0.1
-  isar: ^3.1.0+1
-  isar_flutter_libs: ^3.1.0+1
+  isar:
+    version: ^3.1.8
+    hosted: https://pub.isar-community.dev/
+  isar_flutter_libs:
+    version: ^3.1.8
+    hosted: https://pub.isar-community.dev/
   path_provider: ^2.0.15
   intl: ^0.18.1
   flutter_secure_storage: ^8.0.0
-  permission_handler: ^10.4.0
+  permission_handler: ^12.0.0+1
+  qr_code_scanner_plus: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.2
-  isar_generator: ^3.1.0+1
+  isar_generator:
+    version: ^3.1.8
+    hosted: https://pub.isar-community.dev/
   build_runner: ^2.4.6
 
 flutter:
-  uses-material-design: true 
+  uses-material-design: true

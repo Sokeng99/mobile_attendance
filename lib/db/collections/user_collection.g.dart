@@ -44,7 +44,7 @@ const UserCollectionSchema = CollectionSchema(
   getId: _userCollectionGetId,
   getLinks: _userCollectionGetLinks,
   attach: _userCollectionAttach,
-  version: '3.1.0+1',
+  version: '3.1.8',
 );
 
 int _userCollectionEstimateSize(

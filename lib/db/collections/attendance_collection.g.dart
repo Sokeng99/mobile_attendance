@@ -50,7 +50,7 @@ const AttendanceCollectionSchema = CollectionSchema(
   getId: _attendanceCollectionGetId,
   getLinks: _attendanceCollectionGetLinks,
   attach: _attendanceCollectionAttach,
-  version: '3.1.0+1',
+  version: '3.1.8',
 );
 
 int _attendanceCollectionEstimateSize(
