@@ -34,7 +34,7 @@ class AttendanceModel extends BaseModel<AttendanceModel> {
 
   AttendanceCollection get toAttendanceCollection {
     return AttendanceCollection()
-    ..userId = userId as int?
+    ..userId = userId
     ..userName = userName
     ..checkInTime = checkInTime
     ..status = status;
